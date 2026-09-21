@@ -16,7 +16,7 @@
       home: {
         titleLine1: 'Designing with',
         titleLine2: 'lines & silence.',
-        intro: '独立设计师 / 视觉创作者。\n以线条与留白为语言，记录作品、收藏资源、探索边界。',
+        intro: '我热衷于生成式视觉与沉浸式网页体验，\n把认真做到成真。',
         viewWorks: '查看作品',
         getInTouch: '取得联系',
         tagline: 'Available for freelance',
@@ -63,7 +63,7 @@
       home: {
         titleLine1: 'Designing with',
         titleLine2: 'lines & silence.',
-        intro: 'Independent designer and visual creator.\nRecording works, curating resources, exploring boundaries\nthrough lines and negative space.',
+        intro: 'Passionate about generative visuals and immersive web,\ntaking it seriously to make it real.',
         viewWorks: 'View Works',
         getInTouch: 'Get in Touch',
         tagline: 'Available for freelance',

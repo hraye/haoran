@@ -401,12 +401,13 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-sm border-b border-line/50">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
-        <NavLink to="/" className="flex items-center gap-3 group">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1" className="text-ink">
-            <line x1="4" y1="24" x2="24" y2="4" className="line-draw" />
-            <line x1="4" y1="4" x2="24" y2="24" className="line-draw" style={{ transitionDelay: '0.15s' }} />
-          </svg>
-          <span className="font-display text-lg tracking-wide2">LINE</span>
+        <NavLink to="/" className="flex items-center group">
+          <img
+            src="assets/logo.png"
+            alt="又然创作 YOURAN CREATE"
+            className="h-9 md:h-10 w-auto transition-all duration-500"
+            style={{ filter: theme === 'dark' ? 'none' : 'invert(1) brightness(0.2)' }}
+          />
         </NavLink>
 
         {/* 桌面导航 + 切换按钮 */}
@@ -568,7 +569,7 @@ function Footer() {
             <line x1="4" y1="4" x2="24" y2="24" />
           </svg>
           <span className="text-xs text-muted tracking-wide2">
-            © {new Date().getFullYear()} LINE STUDIO
+            © {new Date().getFullYear()} YOU RAN
           </span>
         </div>
         <p className="text-xs text-muted opacity-60">
@@ -767,17 +768,91 @@ function Home() {
           </p>
         </div>
 
-        {/* 左侧艺术字（参考视频 Look Closer，桌面端显示） */}
-        <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 z-10 pointer-events-none hidden md:block">
+        {/* 左上角：你好，我是 */}
+        <div className="absolute left-6 md:left-10 top-20 md:top-24 z-10 pointer-events-none hidden md:block">
           <div
-            className="font-display italic leading-[0.95]"
+            className="font-sans leading-[0.95] text-left"
             style={{
-              fontSize: 'clamp(3rem, 6vw, 5.5rem)',
-              color: isDark ? 'rgba(232,232,232,0.13)' : 'rgba(26,26,26,0.12)',
+              fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)',
+              letterSpacing: '0.06em',
+              fontWeight: 900,
+              color: isDark ? '#FFFFFF' : '#1A1A1A',
             }}
           >
-            Look
-            <br />Closer<span style={{ color: 'rgba(108,140,255,0.55)' }}>:</span>
+            你好，
+            <br />我是
+          </div>
+        </div>
+
+        {/* 人物右侧：又然 + YOURAN + 定位 */}
+        <div className="absolute right-8 md:right-16 top-1/2 z-10 pointer-events-none hidden md:block" style={{ transform: 'translateY(-42%)' }}>
+          <div className="flex flex-col items-end">
+            <div
+              className="font-sans leading-[0.95]"
+              style={{
+                fontSize: 'clamp(5rem, 11vw, 9rem)',
+                letterSpacing: '0.08em',
+                color: isDark ? '#FFFFFF' : '#1A1A1A',
+                textShadow: isDark ? '0 0 40px rgba(255,255,255,0.15)' : '0 0 30px rgba(0,0,0,0.1)',
+              }}
+            >
+              又然
+            </div>
+            <div
+              className="font-display italic mt-1 mr-1"
+              style={{
+                fontSize: 'clamp(1rem, 1.6vw, 1.4rem)',
+                letterSpacing: '0.35em',
+                color: isDark ? 'rgba(255,255,255,0.75)' : 'rgba(26,26,26,0.75)',
+              }}
+            >
+              YOURAN
+            </div>
+            <div
+              className="font-sans mt-2 mr-1"
+              style={{
+                fontSize: 'clamp(0.7rem, 1vw, 0.85rem)',
+                letterSpacing: '0.2em',
+                color: isDark ? 'rgba(255,255,255,0.55)' : 'rgba(26,26,26,0.55)',
+              }}
+            >
+              独立 AI 创作者・平面设计师
+            </div>
+          </div>
+        </div>
+
+        {/* 手机端标题（仅小屏显示） */}
+        <div className="md:hidden relative z-10 flex flex-col items-center pt-6 pointer-events-none">
+          <div
+            className="font-sans leading-[1.05] text-center"
+            style={{
+              fontSize: 'clamp(2.4rem, 10vw, 3.5rem)',
+              letterSpacing: '0.06em',
+              fontWeight: 900,
+              color: isDark ? '#FFFFFF' : '#1A1A1A',
+            }}
+          >
+            你好，我是又然
+          </div>
+          <div
+            className="font-display italic mt-1"
+            style={{
+              fontSize: '0.85rem',
+              letterSpacing: '0.35em',
+              color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(26,26,26,0.7)',
+            }}
+          >
+            YOURAN
+          </div>
+          <div
+            className="font-sans mt-1.5"
+            style={{
+              fontSize: '0.7rem',
+              letterSpacing: '0.18em',
+              color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(26,26,26,0.5)',
+            }}
+          >
+            独立 AI 创作者・平面设计师
           </div>
         </div>
 
@@ -816,7 +891,7 @@ function Home() {
             className="text-[10px] md:text-xs tracking-wide3 uppercase"
             style={{ color: isDark ? 'rgba(232,232,232,0.45)' : 'rgba(26,26,26,0.55)' }}
           >
-            LINE STUDIO · PORTFOLIO · 2026
+            YOU RAN · PORTFOLIO · 2026
           </p>
         </div>
 
@@ -831,8 +906,17 @@ function Home() {
           </p>
         </div>
 
-        {/* 底部中央：CTA 按钮 + 滚动指示 */}
+        {/* 底部中央：个人介绍 + CTA 按钮 + 滚动指示 */}
         <div className="relative z-10 flex flex-col items-center gap-6">
+          <p
+            className="text-sm md:text-base font-light leading-loose text-center whitespace-pre-line max-w-xl px-6 tracking-wide"
+            style={{
+              fontFamily: 'Georgia, "Noto Serif SC", "Songti SC", "SimSun", serif',
+              color: isDark ? 'rgba(232,232,232,0.7)' : 'rgba(26,26,26,0.75)',
+            }}
+          >
+            {t('home.intro')}
+          </p>
           <div className="flex items-center gap-6">
             <NavLink
               to="/works"
