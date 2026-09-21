@@ -279,11 +279,9 @@ const contactInfo = {
     en: 'Focused on visual design and interactive experiences, weaving narratives through lines and whitespace.',
   },
   items: [
-    { label: 'Email', value: 'hello@line.studio', href: 'mailto:hello@line.studio' },
-    { label: 'WeChat', value: 'line_studio', href: '#' },
-    { label: 'Instagram', value: '@line.studio', href: 'https://instagram.com' },
-    { label: 'Behance', value: 'line-studio', href: 'https://behance.net' },
-    { label: 'GitHub', value: 'line-studio', href: 'https://github.com' },
+    { label: '邮箱', value: '3120546867@qq.com', href: 'mailto:3120546867@qq.com' },
+    { label: '微信', value: 'y-s134', href: '#' },
+    { label: '公众号', value: '又然AI笔记', href: '#' },
   ],
 }
 
@@ -768,13 +766,13 @@ function Home() {
           </p>
         </div>
 
-        {/* 左上角：你好，我是 */}
-        <div className="absolute left-6 md:left-10 top-20 md:top-24 z-10 pointer-events-none hidden md:block">
+        {/* 左侧：你好，我是（与又然同大小同字体） */}
+        <div className="absolute left-8 md:left-16 top-1/2 z-10 pointer-events-none hidden md:block" style={{ transform: 'translateY(-58%)' }}>
           <div
             className="font-sans leading-[0.95] text-left"
             style={{
-              fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)',
-              letterSpacing: '0.06em',
+              fontSize: 'clamp(5rem, 11vw, 9rem)',
+              letterSpacing: '0.08em',
               fontWeight: 900,
               color: isDark ? '#FFFFFF' : '#1A1A1A',
             }}
@@ -788,8 +786,9 @@ function Home() {
         <div className="absolute right-8 md:right-16 top-1/2 z-10 pointer-events-none hidden md:block" style={{ transform: 'translateY(-42%)' }}>
           <div className="flex flex-col items-end">
             <div
-              className="font-sans leading-[0.95]"
+              className="leading-[0.95]"
               style={{
+                fontFamily: '"Liu Jian Mao Cao", "Zhi Mang Xing", cursive',
                 fontSize: 'clamp(5rem, 11vw, 9rem)',
                 letterSpacing: '0.08em',
                 color: isDark ? '#FFFFFF' : '#1A1A1A',
@@ -1386,17 +1385,36 @@ function Contact() {
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   onClick={(e) => {
-                    if (item.label === 'WeChat') {
+                    if (item.label === '微信' || item.label === '公众号') {
                       e.preventDefault()
-                      copyWechat()
+                      navigator.clipboard && navigator.clipboard.writeText(item.value)
+                      setCopied(true)
+                      setTimeout(() => setCopied(false), 2000)
                     }
                   }}
                   className="flex items-center justify-between py-5 md:py-6 hover:pl-4 transition-all duration-500 ease-line"
                 >
                   <div className="flex items-center gap-5">
-                    <span className="font-display italic text-muted text-sm w-8">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
+                    {/* 图标 */}
+                    {item.label === '邮箱' && (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-muted">
+                        <rect x="3" y="5" width="18" height="14" rx="1" />
+                        <path d="M3 7l9 6 9-6" />
+                      </svg>
+                    )}
+                    {item.label === '微信' && (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-muted">
+                        <path d="M8.5 4C4.9 4 2 6.7 2 10c0 1.9 1 3.5 2.6 4.6L4 17l2.8-1.5c.5.1 1.1.2 1.7.2M15.5 9c-3.6 0-6.5 2.4-6.5 5.4 0 3 2.9 5.4 6.5 5.4.7 0 1.4-.1 2-.3l2.5 1.3-.7-2.1c1.6-1 2.7-2.6 2.7-4.3C22 11.4 19.1 9 15.5 9z" />
+                      </svg>
+                    )}
+                    {item.label === '公众号' && (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-muted">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 20l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        <circle cx="8.5" cy="11" r="0.5" fill="currentColor" />
+                        <circle cx="12" cy="11" r="0.5" fill="currentColor" />
+                        <circle cx="15.5" cy="11" r="0.5" fill="currentColor" />
+                      </svg>
+                    )}
                     <div>
                       <p className="text-xs text-muted tracking-wide2 uppercase mb-1">{item.label}</p>
                       <p className="text-base md:text-lg">{item.value}</p>
