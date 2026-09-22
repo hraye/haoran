@@ -68,9 +68,10 @@
       if (!child || !child.props) return
       const { path } = child.props
       if (path === undefined) return
+      const currentPathOnly = currentPath.split('?')[0]
       if (path === '/') {
-        if (currentPath === '/') matched = child
-      } else if (currentPath === path) {
+        if (currentPathOnly === '/') matched = child
+      } else if (currentPathOnly === path) {
         matched = child
       }
     })

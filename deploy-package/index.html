@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="creative-medium" content="interactive-prototype" />
     <title>LINE — 个人作品与资源站</title>
-    <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" />
+    <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=Liu+Jian+Mao+Cao&family=ZCOOL+KuaiLe&display=swap" />
 
     <!-- Tailwind CSS CDN (本地副本) -->
     <script src="assets/tailwindcss.js"></script>
@@ -25,6 +25,7 @@
               fontFamily: {
                 sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
                 display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                calligraphy: ['"Ma Shan Zheng"', 'KaiTi', 'STKaiti', 'cursive'],
               },
               letterSpacing: {
                 wide2: '0.2em',
@@ -302,8 +303,8 @@
     <script src="https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/miaoda/coding-unpkg-sdk/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
     <!-- 依赖 React 的模块（内部用懒加载 React，所以脚本顺序可以在前） -->
-    <script src="src/simple-router.js"></script>
-    <script src="src/i18n.js"></script>
+    <script src="src/simple-router.js?v=2"></script>
+    <script src="src/i18n.js?v=2"></script>
     <script src="src/theme.js"></script>
 
     <!-- 全局错误捕获（尽早安装） -->
@@ -347,7 +348,7 @@
     <script src="https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/miaoda/coding-unpkg-sdk/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
 
     <!-- 应用入口 — Babel 会扫描到此脚本并转译执行 -->
-    <script type="text/babel" data-presets="react" src="src/App.jsx"></script>
+    <script type="text/babel" data-presets="react" src="src/App.jsx?v=2"></script>
 
     <!-- 渲染完成后隐藏 loading -->
     <script>

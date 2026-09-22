@@ -8,268 +8,21 @@ const { useTheme, ThemeProvider, ThemeContext } = window
    ============================================================ */
 
 const imageWorks = [
-  {
-    id: 'img-01',
-    title: { zh: '静谧之境 01', en: 'Silent Realm 01' },
-    category: { zh: '摄影 / 静物', en: 'Photography / Still' },
-    year: '2024',
-    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=70',
-    desc: {
-      zh: '山间清晨，雾气与光线交织的一瞬。',
-      en: 'A moment where mist and light intertwine at dawn in the mountains.',
-    },
-  },
-  {
-    id: 'img-02',
-    title: { zh: '城市线条 02', en: 'Urban Lines 02' },
-    category: { zh: '建筑 / 几何', en: 'Architecture / Geometry' },
-    year: '2024',
-    src: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=70',
-    desc: {
-      zh: '现代建筑的几何构成与光影关系。',
-      en: 'Geometric composition and light-shadow relationships of modern architecture.',
-    },
-  },
-  {
-    id: 'img-03',
-    title: { zh: '白 03', en: 'White 03' },
-    category: { zh: '极简 / 材质', en: 'Minimal / Material' },
-    year: '2023',
-    src: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=1200&q=70',
-    desc: {
-      zh: '白色调下的材质实验与空间感受。',
-      en: 'Material experiments and spatial sensations in white tones.',
-    },
-  },
-  {
-    id: 'img-04',
-    title: { zh: '海岸线 04', en: 'Coastline 04' },
-    category: { zh: '风光 / 长曝光', en: 'Landscape / Long Exposure' },
-    year: '2023',
-    src: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&q=70',
-    desc: {
-      zh: '潮水退去后的海岸线纹理。',
-      en: 'The texture of the coastline after the tide recedes.',
-    },
-  },
-  {
-    id: 'img-05',
-    title: { zh: '结构 05', en: 'Structure 05' },
-    category: { zh: '建筑 / 线条', en: 'Architecture / Lines' },
-    year: '2024',
-    src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=70',
-    desc: {
-      zh: '室内空间的线条节奏与秩序。',
-      en: 'Rhythm and order of lines in interior spaces.',
-    },
-  },
-  {
-    id: 'img-06',
-    title: { zh: '夜 06', en: 'Night 06' },
-    category: { zh: '夜景 / 光影', en: 'Nightscape / Light' },
-    year: '2023',
-    src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=70',
-    desc: {
-      zh: '夜色中山峰的轮廓与星空。',
-      en: 'Mountain silhouettes and starry sky in the night.',
-    },
-  },
+  { id: 'img-01', title: { zh: '粉墨幻境', en: 'Pink Illusion' }, category: { zh: 'AI 生成 / 人像', en: 'AI Generated / Portrait' }, year: '2024', src: 'assets/work-01.jpg', desc: { zh: '粉色与霓虹交织的奇幻人像。', en: 'A fantasy portrait woven in pink and neon.' } },
 ]
 
 const videoWorks = [
-  {
-    id: 'vid-01',
-    title: { zh: '流动的城市', en: 'Flowing City' },
-    category: { zh: '短片 / 延时', en: 'Short Film / Timelapse' },
-    year: '2024',
-    duration: '02:30',
-    poster: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1200&q=70',
-    src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-  },
-  {
-    id: 'vid-02',
-    title: { zh: '静物实验', en: 'Still Life Experiment' },
-    category: { zh: '实验 / 微距', en: 'Experimental / Macro' },
-    year: '2024',
-    duration: '01:45',
-    poster: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1200&q=70',
-    src: 'https://www.w3schools.com/html/movie.mp4',
-  },
-  {
-    id: 'vid-03',
-    title: { zh: '行走的光', en: 'Walking Light' },
-    category: { zh: '纪录 / 光影', en: 'Documentary / Light' },
-    year: '2023',
-    duration: '03:12',
-    poster: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=70',
-    src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-  },
-  {
-    id: 'vid-04',
-    title: { zh: '海的呼吸', en: 'Breath of the Sea' },
-    category: { zh: '自然 / 慢镜头', en: 'Nature / Slow Motion' },
-    year: '2023',
-    duration: '02:08',
-    poster: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&q=70',
-    src: 'https://www.w3schools.com/html/movie.mp4',
-  },
+  { id: 'vid-00', title: { zh: '待上传', en: 'Coming Soon' }, category: { zh: '等待内容', en: 'Pending' }, year: '', duration: '', poster: '', src: '' },
 ]
 
 const codeWorks = [
-  {
-    id: 'code-01',
-    title: { zh: '线条生成器', en: 'Line Generator' },
-    desc: {
-      zh: '基于 Canvas 的参数化线条生成工具，可导出 SVG。',
-      en: 'A Canvas-based parametric line generation tool with SVG export.',
-    },
-    tags: ['Canvas', 'JavaScript', 'SVG', 'Creative Coding'],
-    demo: 'https://codepen.io',
-    source: 'https://github.com',
-    year: '2024',
-    accent: 'cross',
-  },
-  {
-    id: 'code-02',
-    title: { zh: '极简待办', en: 'Minimal Todo' },
-    desc: {
-      zh: '纯键盘操作的命令行式待办应用，本地存储。',
-      en: 'A keyboard-only command-line style todo app with local storage.',
-    },
-    tags: ['React', 'TypeScript', 'LocalStorage'],
-    demo: 'https://example.com',
-    source: 'https://github.com',
-    year: '2024',
-    accent: 'circle',
-  },
-  {
-    id: 'code-03',
-    title: { zh: '天气数据可视化', en: 'Weather Data Viz' },
-    desc: {
-      zh: '用 SVG 线条语言呈现一年天气数据的信息可视化。',
-      en: 'An information visualization of one year of weather data in SVG line language.',
-    },
-    tags: ['D3.js', 'SVG', 'Data Viz', 'API'],
-    demo: 'https://observablehq.com',
-    source: 'https://github.com',
-    year: '2023',
-    accent: 'grid',
-  },
-  {
-    id: 'code-04',
-    title: { zh: '字体标本', en: 'Type Specimen',
-    },
-    desc: {
-      zh: '可变字体交互式标本页，探索字重与字宽的边界。',
-      en: 'An interactive variable font specimen exploring weight and width boundaries.',
-    },
-    tags: ['CSS', 'Variable Fonts', 'Animation'],
-    demo: 'https://typetheweb.com',
-    source: 'https://github.com',
-    year: '2023',
-    accent: 'line',
-  },
-  {
-    id: 'code-05',
-    title: { zh: '音频可视化器', en: 'Audio Visualizer' },
-    desc: {
-      zh: '实时音频分析驱动的几何线条动画。',
-      en: 'Geometric line animation driven by real-time audio analysis.',
-    },
-    tags: ['Web Audio API', 'Three.js', 'WebGL'],
-    demo: 'https://example.com',
-    source: 'https://github.com',
-    year: '2024',
-    accent: 'wave',
-  },
-  {
-    id: 'code-06',
-    title: { zh: '书签管理器', en: 'Bookmark Manager' },
-    desc: {
-      zh: '极简风格浏览器扩展，标签式管理收藏链接。',
-      en: 'A minimal browser extension for managing bookmarks with tags.',
-    },
-    tags: ['Chrome Extension', 'Vanilla JS', 'IndexedDB'],
-    demo: '#',
-    source: 'https://github.com',
-    year: '2023',
-    accent: 'dots',
-  },
+  { id: 'code-00', title: { zh: '待上传', en: 'Coming Soon' }, desc: { zh: '作品即将上线', en: 'Project coming soon' }, tags: [], demo: '#', source: '#', year: '', accent: 'line' },
 ]
 
 const resourceGroups = [
-  {
-    id: 'res-01',
-    title: { zh: '设计工具集', en: 'Design Toolkit' },
-    desc: {
-      zh: '日常使用的设计软件、插件与效率工具清单。',
-      en: 'A list of design software, plugins and productivity tools for daily use.',
-    },
-    items: [
-      { name: { zh: 'Figma 资源社区', en: 'Figma Community' }, url: 'https://figma.com/community' },
-      { name: { zh: '字体收藏', en: 'Font Collection' }, url: 'https://fonts.google.com' },
-      { name: { zh: '色彩参考库', en: 'Color Reference' }, url: 'https://coolors.co' },
-      { name: { zh: '灵感收藏夹', en: 'Inspiration Bookmarks' }, url: 'https://dribbble.com' },
-    ],
-  },
-  {
-    id: 'res-02',
-    title: { zh: '学习与阅读', en: 'Learning & Reading' },
-    desc: {
-      zh: '书单、课程与长期关注的文章来源。',
-      en: 'Books, courses and long-followed article sources.',
-    },
-    items: [
-      { name: { zh: '设计书籍推荐', en: 'Design Book Recommendations' }, url: 'https://www.goodreads.com' },
-      { name: { zh: '在线课程列表', en: 'Online Courses' }, url: 'https://www.coursera.org' },
-      { name: { zh: '每周必读周刊', en: 'Weekly Newsletter' }, url: 'https://mailchimp.com' },
-    ],
-  },
-  {
-    id: 'res-03',
-    title: { zh: '素材与图库', en: 'Assets & Stock' },
-    desc: {
-      zh: '高质量无版权图片、视频与音频素材站。',
-      en: 'High-quality royalty-free image, video and audio asset sites.',
-    },
-    items: [
-      { name: { zh: 'Unsplash 高清图库', en: 'Unsplash Stock Photos' }, url: 'https://unsplash.com' },
-      { name: { zh: 'Pexels 视频素材', en: 'Pexels Stock Videos' }, url: 'https://www.pexels.com/videos' },
-      { name: { zh: 'Freepik 矢量素材', en: 'Freepik Vectors' }, url: 'https://www.freepik.com' },
-      { name: { zh: 'Iconfont 图标库', en: 'Iconfont Library' }, url: 'https://www.iconfont.cn' },
-    ],
-  },
-  {
-    id: 'res-04',
-    title: { zh: '开发备忘', en: 'Dev Cheatsheet' },
-    desc: {
-      zh: '常用代码片段、文档与调试工具速查。',
-      en: 'Quick reference for common code snippets, docs and debugging tools.',
-    },
-    items: [
-      { name: { zh: 'MDN Web 文档', en: 'MDN Web Docs' }, url: 'https://developer.mozilla.org' },
-      { name: { zh: 'Tailwind 速查', en: 'Tailwind Cheatsheet' }, url: 'https://tailwindcss.com' },
-      { name: { zh: 'CodePen 收藏', en: 'CodePen Collection' }, url: 'https://codepen.io' },
-    ],
-  },
-  {
-    id: 'res-05',
-    title: { zh: '模板预留', en: 'Reserved Template' },
-    desc: { zh: '待补充的第五组资源分类。', en: 'Fifth resource group to be filled.' },
-    items: [
-      { name: { zh: '待添加链接一', en: 'To be added 1' }, url: '#' },
-      { name: { zh: '待添加链接二', en: 'To be added 2' }, url: '#' },
-    ],
-  },
-  {
-    id: 'res-06',
-    title: { zh: '模板预留', en: 'Reserved Template' },
-    desc: { zh: '待补充的第六组资源分类。', en: 'Sixth resource group to be filled.' },
-    items: [
-      { name: { zh: '待添加链接一', en: 'To be added 1' }, url: '#' },
-      { name: { zh: '待添加链接二', en: 'To be added 2' }, url: '#' },
-    ],
-  },
+  { id: 'res-00', title: { zh: '资源一', en: 'Resource 01' }, desc: { zh: '资源整理中，敬请期待。', en: 'Resources being curated.' }, items: [{ name: { zh: '待上传', en: 'Coming Soon' }, url: '#' }] },
+  { id: 'res-01', title: { zh: '资源二', en: 'Resource 02' }, desc: { zh: '资源整理中，敬请期待。', en: 'Resources being curated.' }, items: [{ name: { zh: '待上传', en: 'Coming Soon' }, url: '#' }] },
+  { id: 'res-02', title: { zh: '资源三', en: 'Resource 03' }, desc: { zh: '资源整理中，敬请期待。', en: 'Resources being curated.' }, items: [{ name: { zh: '待上传', en: 'Coming Soon' }, url: '#' }] },
 ]
 
 const contactInfo = {
@@ -279,11 +32,9 @@ const contactInfo = {
     en: 'Focused on visual design and interactive experiences, weaving narratives through lines and whitespace.',
   },
   items: [
-    { label: 'Email', value: 'hello@line.studio', href: 'mailto:hello@line.studio' },
-    { label: 'WeChat', value: 'line_studio', href: '#' },
-    { label: 'Instagram', value: '@line.studio', href: 'https://instagram.com' },
-    { label: 'Behance', value: 'line-studio', href: 'https://behance.net' },
-    { label: 'GitHub', value: 'line-studio', href: 'https://github.com' },
+    { label: '邮箱', value: '3120546867@qq.com', href: 'mailto:3120546867@qq.com' },
+    { label: '微信', value: 'y-s134', href: '#' },
+    { label: '公众号', value: '又然AI笔记', href: '#' },
   ],
 }
 
@@ -401,38 +152,47 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-sm border-b border-line/50">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
-        <NavLink to="/" className="flex items-center gap-3 group">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1" className="text-ink">
-            <line x1="4" y1="24" x2="24" y2="4" className="line-draw" />
-            <line x1="4" y1="4" x2="24" y2="24" className="line-draw" style={{ transitionDelay: '0.15s' }} />
-          </svg>
-          <span className="font-display text-lg tracking-wide2">LINE</span>
+        <NavLink to="/" className="flex items-center group">
+          <img
+            src="assets/logo.png"
+            alt="又然创作 YOURAN CREATE"
+            className="h-9 md:h-10 w-auto transition-all duration-500"
+            style={{ filter: theme === 'dark' ? 'none' : 'invert(1) brightness(0.2)' }}
+          />
         </NavLink>
 
         {/* 桌面导航 + 切换按钮 */}
-        <div className="hidden md:flex items-center gap-8">
-          <nav className="flex items-center gap-10">
-            {links.map((l, i) => (
+        <div className="hidden md:flex items-center gap-6">
+          <nav
+            className="flex items-center rounded-full p-1"
+            style={{
+              background: theme === 'dark' ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)',
+              border: '1px solid ' + (theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'),
+            }}
+          >
+            {links.map((l, i) => {
+              const isHome = l.to === '/' && location.pathname === '/'
+              const isOther = l.to !== '/' && location.pathname.startsWith(l.to)
+              const isActive = isHome || isOther
+              return (
               <NavLink
                 key={l.to}
                 to={l.to}
                 end={l.to === '/'}
-                className={({ isActive }) =>
-                  `relative text-sm tracking-wide2 transition-colors duration-300 line-expand-x py-1 ${
-                    isActive ? 'text-ink' : 'text-muted hover:text-ink'
-                  }`
-                }
+                className={`px-5 py-2 text-sm tracking-wide2 rounded-full transition-all duration-300 ${isActive ? 'text-white' : 'hover:opacity-80'}`}
+                style={isActive ? {
+                  background: 'linear-gradient(135deg, #f97316, #ea580c)',
+                  boxShadow: '0 4px 16px rgba(249,115,22,0.4)',
+                } : { color: theme === 'dark' ? 'rgba(232,232,232,0.7)' : 'rgba(26,26,26,0.7)' }}
               >
-                <span className="font-display italic text-xs mr-2 opacity-50">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
                 {t(l.labelKey)}
               </NavLink>
-            ))}
+              )
+            })}
           </nav>
 
           {/* 分隔线 */}
-          <div className="w-px h-6 bg-line"></div>
+          <div className="w-px h-6" style={{ background: theme === 'dark' ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.15)' }}></div>
 
           {/* 切换按钮组 */}
           <div className="flex items-center gap-2">
@@ -568,7 +328,7 @@ function Footer() {
             <line x1="4" y1="4" x2="24" y2="24" />
           </svg>
           <span className="text-xs text-muted tracking-wide2">
-            © {new Date().getFullYear()} LINE STUDIO
+            © {new Date().getFullYear()} YOU RAN
           </span>
         </div>
         <p className="text-xs text-muted opacity-60">
@@ -620,7 +380,7 @@ function chromaKeyFrame(canvas, video) {
 }
 
 function Home() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { theme } = useTheme()
   const videoRef = useRef(null)
   const canvasRef = useRef(null)
@@ -767,17 +527,92 @@ function Home() {
           </p>
         </div>
 
-        {/* 左侧艺术字（参考视频 Look Closer，桌面端显示） */}
-        <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 z-10 pointer-events-none hidden md:block">
+        {/* 左侧：你好，我是（与又然同大小同字体） */}
+        <div className="absolute left-8 md:left-16 top-1/2 z-10 pointer-events-none hidden md:block" style={{ transform: 'translateY(-58%)' }}>
           <div
-            className="font-display italic leading-[0.95]"
+            className="font-sans leading-[1.25] text-left"
             style={{
-              fontSize: 'clamp(3rem, 6vw, 5.5rem)',
-              color: isDark ? 'rgba(232,232,232,0.13)' : 'rgba(26,26,26,0.12)',
+              fontSize: 'clamp(5rem, 11vw, 9rem)',
+              letterSpacing: '0.08em',
+              fontWeight: 900,
+              color: isDark ? '#FFFFFF' : '#1A1A1A',
             }}
           >
-            Look
-            <br />Closer<span style={{ color: 'rgba(108,140,255,0.55)' }}>:</span>
+            {lang === 'zh' ? '你好，' : 'Hello,'}
+            <br />{lang === 'zh' ? '我是' : "I'm"}
+          </div>
+        </div>
+
+        {/* 人物右侧：又然 + YOURAN + 定位 */}
+        <div className="absolute right-8 md:right-16 top-1/2 z-10 pointer-events-none hidden md:block" style={{ transform: 'translateY(-42%)' }}>
+          <div className="flex flex-col items-end">
+            <div
+              className="leading-[0.95]"
+              style={{
+                fontFamily: '"Liu Jian Mao Cao", "Zhi Mang Xing", cursive',
+                fontSize: 'clamp(5rem, 11vw, 9rem)',
+                letterSpacing: '0.08em',
+                color: isDark ? '#FFFFFF' : '#1A1A1A',
+                textShadow: isDark ? '0 0 40px rgba(255,255,255,0.15)' : '0 0 30px rgba(0,0,0,0.1)',
+              }}
+            >
+              又然
+            </div>
+            <div
+              className="font-display italic mt-1 mr-1"
+              style={{
+                fontSize: 'clamp(1rem, 1.6vw, 1.4rem)',
+                letterSpacing: '0.35em',
+                color: isDark ? 'rgba(255,255,255,0.75)' : 'rgba(26,26,26,0.75)',
+              }}
+            >
+              YOURAN
+            </div>
+            <div
+              className="font-sans mt-2 mr-1"
+              style={{
+                fontSize: 'clamp(0.7rem, 1vw, 0.85rem)',
+                letterSpacing: '0.2em',
+                color: isDark ? 'rgba(255,255,255,0.55)' : 'rgba(26,26,26,0.55)',
+              }}
+            >
+              {lang === 'zh' ? '独立 AI 创作者・平面设计师' : 'Independent AI Creator · Graphic Designer'}
+            </div>
+          </div>
+        </div>
+
+        {/* 手机端标题（仅小屏显示） */}
+        <div className="md:hidden relative z-10 flex flex-col items-center pt-6 pointer-events-none">
+          <div
+            className="font-sans leading-[1.05] text-center"
+            style={{
+              fontSize: 'clamp(2.4rem, 10vw, 3.5rem)',
+              letterSpacing: '0.06em',
+              fontWeight: 900,
+              color: isDark ? '#FFFFFF' : '#1A1A1A',
+            }}
+          >
+            你好，我是又然
+          </div>
+          <div
+            className="font-display italic mt-1"
+            style={{
+              fontSize: '0.85rem',
+              letterSpacing: '0.35em',
+              color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(26,26,26,0.7)',
+            }}
+          >
+            YOURAN
+          </div>
+          <div
+            className="font-sans mt-1.5"
+            style={{
+              fontSize: '0.7rem',
+              letterSpacing: '0.18em',
+              color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(26,26,26,0.5)',
+            }}
+          >
+            独立 AI 创作者・平面设计师
           </div>
         </div>
 
@@ -816,7 +651,7 @@ function Home() {
             className="text-[10px] md:text-xs tracking-wide3 uppercase"
             style={{ color: isDark ? 'rgba(232,232,232,0.45)' : 'rgba(26,26,26,0.55)' }}
           >
-            LINE STUDIO · PORTFOLIO · 2026
+            YOU RAN · PORTFOLIO · 2026
           </p>
         </div>
 
@@ -831,8 +666,17 @@ function Home() {
           </p>
         </div>
 
-        {/* 底部中央：CTA 按钮 + 滚动指示 */}
+        {/* 底部中央：个人介绍 + CTA 按钮 + 滚动指示 */}
         <div className="relative z-10 flex flex-col items-center gap-6">
+          <p
+            className="text-sm md:text-base font-light leading-loose text-center whitespace-pre-line max-w-xl px-6 tracking-wide"
+            style={{
+              fontFamily: 'Georgia, "Noto Serif SC", "Songti SC", "SimSun", serif',
+              color: isDark ? 'rgba(232,232,232,0.7)' : 'rgba(26,26,26,0.75)',
+            }}
+          >
+            {t('home.intro')}
+          </p>
           <div className="flex items-center gap-6">
             <NavLink
               to="/works"
@@ -852,6 +696,7 @@ function Home() {
               {t('home.getInTouch')}
             </NavLink>
           </div>
+
           <div className="flex flex-col items-center gap-2 pointer-events-none">
             <span
               className="text-[10px] tracking-wide3 uppercase"
@@ -865,7 +710,153 @@ function Home() {
           </div>
         </div>
       </section>
-    </PageWrap>
+
+      {/* 第二屏：不规则碎片卡片 */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 -mx-6 md:-mx-12 py-20 overflow-hidden">
+        <div className="mb-16 text-center relative z-10">
+          <p className="text-[10px] tracking-wide3 uppercase mb-3" style={{ color: isDark ? 'rgba(232,232,232,0.5)' : 'rgba(26,26,26,0.5)' }}>{lang === 'zh' ? '探索作品' : 'EXPLORE'}</p>
+          <h2
+            className="text-5xl md:text-7xl leading-none"
+            style={{
+              fontFamily: '"ZCOOL KuaiLe", "Liu Jian Mao Cao", cursive',
+              color: ink,
+              textShadow: isDark ? '0 0 40px rgba(255,255,255,0.15)' : '0 0 30px rgba(0,0,0,0.1)',
+            }}
+          >
+            {t('nav.works')}
+          </h2>
+        </div>
+
+        <div className="relative w-full max-w-5xl h-[420px] md:h-[480px]">
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 480" preserveAspectRatio="none" fill="none">
+            <path d="M 500 20 C 350 80, 200 100, 120 160" stroke="#7c9eff" strokeWidth="1.2" strokeDasharray="4 6" className="electric-line" opacity="0.6" />
+            <path d="M 500 20 C 650 80, 780 90, 860 140" stroke="#9d7cff" strokeWidth="1.2" strokeDasharray="4 6" className="electric-line" style={{ animationDelay: '0.3s' }} opacity="0.6" />
+            <path d="M 500 20 C 500 120, 480 200, 460 340" stroke="#5ce8c8" strokeWidth="1.2" strokeDasharray="4 6" className="electric-line" style={{ animationDelay: '0.6s' }} opacity="0.6" />
+          </svg>
+          <style>{`
+            @keyframes electricFlow { to { stroke-dashoffset: -20; } }
+            .electric-line { animation: electricFlow 0.8s linear infinite; }
+            @keyframes flowDash { to { stroke-dashoffset: -28; } }
+            .flow-path { animation: flowDash 1.2s linear infinite; }
+          `}</style>
+          {[
+            { to: '/works?tab=image', title: lang === 'zh' ? '图片作品' : 'IMAGE', en: lang === 'zh' ? '图片' : 'IMAGE', desc: lang === 'zh' ? '生成式视觉作品' : 'Generative Visuals',
+              accent: '#ff6b35', glow: 'rgba(255,107,53,0.4)',
+              grad: 'linear-gradient(135deg, #ff8c42 0%, #e63946 50%, #9d0208 100%)', pattern: 'film', img: 'assets/card1-orange.jpg',
+              pos: 'left-[5%] top-[10%]', rot: '-6deg', size: 'w-40 md:w-48', radius: 'rounded-[28px_12px_24px_14px]',
+              icon: (<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="M21 15l-5-5L5 21" />
+              </svg>) },
+            { to: '/works?tab=video', title: lang === 'zh' ? '视频作品' : 'VIDEO', en: lang === 'zh' ? '视频' : 'VIDEO', desc: lang === 'zh' ? '动态影像与沉浸式体验' : 'Motion & Immersive',
+              accent: '#f4a261', glow: 'rgba(244,162,97,0.4)',
+              grad: 'linear-gradient(135deg, #ffb4a2 0%, #e5989b 50%, #6d597a 100%)', pattern: 'clapper', img: 'assets/card2-purple.jpg',
+              pos: 'right-[8%] top-[0%]', rot: '5deg', size: 'w-40 md:w-48', radius: 'rounded-[14px_28px_12px_24px]',
+              icon: (<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                <polygon points="6,4 20,12 6,20" />
+              </svg>) },
+            { to: '/works?tab=code', title: lang === 'zh' ? '编程作品' : 'CODE', en: lang === 'zh' ? '编程' : 'CODE', desc: lang === 'zh' ? '创意网页与交互实验' : 'Creative Web & Labs',
+              accent: '#4cc9f0', glow: 'rgba(76,201,240,0.4)',
+              grad: 'linear-gradient(135deg, #48cae4 0%, #0096c7 50%, #023e8a 100%)', pattern: 'code', img: 'assets/card3-cyan.jpg',
+              pos: 'left-[30%] bottom-[5%]', rot: '-3deg', size: 'w-40 md:w-48', radius: 'rounded-[20px_14px_28px_12px]',
+              icon: (<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+              </svg>) },
+          ].map((c, i) => (
+            <NavLink
+              key={i}
+              to={c.to}
+              className={`group absolute ${c.pos} ${c.rot} transition-all duration-700 ease-out hover:!rotate-0 hover:-translate-y-3 hover:scale-105`}
+            >
+              <div className={`relative ${c.size} group-hover:!rotate-0`}>
+                {/* 外层圆角边框 */}
+                <div
+                  className="rounded-2xl p-2 transition-all duration-500"
+                  style={{
+                    border: `1.5px solid ${c.accent}`,
+                    boxShadow: `0 0 24px ${c.glow}, 0 20px 50px rgba(0,0,0,0.4)`,
+                  }}
+                >
+                  <img
+                    src={c.img}
+                    alt=""
+                    className="rounded-xl w-full h-40 md:h-48 object-cover"
+                  />
+                  {/* 底部信息栏 */}
+                  <div
+                    className="px-3 pt-3 pb-2"
+                    style={{ background: isDark ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.85)' }}
+                  >
+                    <div
+                      className="text-lg font-bold mb-1"
+                      style={{ color: isDark ? '#fff' : '#1a1a1a' }}
+                    >{c.title}</div>
+                    <div
+                      className="text-xs mb-2"
+                      style={{ color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)' }}
+                    >{c.desc}</div>
+                    <div className="flex items-center justify-between">
+                      <span
+                        className="text-xs tracking-wide3 uppercase"
+                        style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.4)' }}
+                      >{c.en}</span>
+                      <svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                        style={{ color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)' }}
+                      >
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </NavLink>
+          ))}
+        </div>
+      </section>
+
+      {/* 第三屏：资源介绍 */}
+      <section className="min-h-screen flex items-center justify-center relative px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="text-sm tracking-[0.3em] mb-4" style={{ color: ink.muted }}>
+            {lang === 'zh' ? '探索资源' : 'EXPLORE RESOURCES'}
+          </div>
+          <h2
+            className="text-5xl md:text-7xl font-black mb-6"
+            style={{
+              fontFamily: "'ZCOOL KuaiLe', sans-serif",
+              color: ink.primary,
+            }}
+          >
+            {lang === 'zh' ? '资源' : 'RESOURCES'}
+          </h2>
+          <p
+            className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed"
+            style={{ color: ink.secondary }}
+          >
+            {lang === 'zh'
+              ? '分享我在 AI 创作路上收集的优质工具、素材和学习资料，以利他成就你我。'
+              : 'Curated AI creation tools, assets and learning resources shared to help you create.'}
+          </p>
+          <NavLink
+            to="/resources"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all hover:scale-105"
+            style={{
+              background: 'linear-gradient(135deg, #48cae4 0%, #0096c7 100%)',
+              color: '#fff',
+              boxShadow: '0 10px 30px rgba(0,150,199,0.4)',
+            }}
+          >
+            {lang === 'zh' ? '浏览资源库' : 'Browse Resources'}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </NavLink>
+        </div>
+      </section>
+
+        </PageWrap>
   )
 }
 
@@ -874,10 +865,14 @@ function Home() {
    ============================================================ */
 
 function Works() {
-  const [activeTab, setActiveTab] = useState('image') // image | video | code
+  const [activeTab, setActiveTab] = useState(() => {
+    const m = (window.location.hash || '').match(/[?&]tab=(\w+)/)
+    return m && ['image', 'video', 'code'].includes(m[1]) ? m[1] : 'image'
+  })
   const [lightbox, setLightbox] = useState(null)
   const [videoPlayer, setVideoPlayer] = useState(null)
   const { t, lang } = useI18n()
+  const { isDark } = useTheme()
 
   useEffect(() => {
     if (lightbox || videoPlayer) {
@@ -909,26 +904,27 @@ function Works() {
 
   return (
     <PageWrap>
-      <PageHeader num="02" titleKey="works.title" enKey="works.en" />
 
       {/* Tab 切换 */}
-      <div className="flex items-center gap-8 mb-12 md:mb-16 flex-wrap">
+      <div className="flex items-center gap-3 mb-12 md:mb-16 flex-wrap justify-center">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`relative text-sm tracking-wide2 py-2 transition-colors duration-300 ${
-              activeTab === tab.id ? 'text-ink' : 'text-muted hover:text-ink'
+            className={`px-8 py-3 rounded-full text-lg transition-all duration-300 ${
+              activeTab === tab.id
+                ? isDark
+                  ? 'bg-orange-500 text-white shadow-[0_0_20px_rgba(249,115,22,0.5)]'
+                  : 'bg-orange-500 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)]'
+                : isDark
+                  ? 'bg-white/10 text-orange-300/70 hover:bg-white/20 hover:text-orange-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)]'
+                  : 'bg-black/5 text-orange-600/70 hover:bg-orange-100 hover:text-orange-600 hover:shadow-[0_0_15px_rgba(249,115,22,0.2)]'
             }`}
+            style={{ fontFamily: "'ZCOOL KuaiLe', sans-serif" }}
           >
-            <span className="font-display italic text-xs mr-2 opacity-50">{tab.num}</span>
             {t(tab.key)}
-            {activeTab === tab.id && (
-              <span className="absolute bottom-0 left-0 right-0 h-px bg-ink"></span>
-            )}
           </button>
         ))}
-        <div className="flex-1 h-px bg-faint min-w-[40px]"></div>
       </div>
 
       {/* 图片作品网格 */}
@@ -940,11 +936,11 @@ function Works() {
               className="group relative cursor-pointer corner-lines bg-paper"
               onClick={() => setLightbox(work)}
             >
-              <div className="aspect-[4/3] overflow-hidden bg-faint relative">
+              <div className="overflow-hidden bg-faint relative">
                 <img
                   src={work.src}
                   alt={work.title[lang]}
-                  className="w-full h-full object-cover transition-all duration-700 ease-line group-hover:scale-[1.02] group-hover:brightness-90"
+                  className="w-full h-auto block transition-all duration-700 ease-line group-hover:brightness-90"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -1167,89 +1163,124 @@ function Works() {
    ============================================================ */
 
 function Resources() {
-  const [expanded, setExpanded] = useState('res-01')
   const { lang } = useI18n()
+  const { isDark, ink } = useTheme()
+  const [query, setQuery] = useState('')
 
   return (
     <PageWrap>
-      <PageHeader num="03" titleKey="resources.title" enKey="resources.en" />
 
-      <div className="space-y-4 stagger">
-        {resourceGroups.map((group, idx) => {
-          const isOpen = expanded === group.id
-          return (
-            <div
-              key={group.id}
-              className={`border border-line transition-all duration-500 ease-line ${
-                isOpen ? 'border-ink' : 'hover:border-muted/50'
-              }`}
-            >
-              <button
-                onClick={() => setExpanded(isOpen ? null : group.id)}
-                className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between gap-6 text-left"
+      {/* 顶部渐变 banner */}
+      <div
+        className="rounded-2xl p-8 md:p-12 mb-12 relative overflow-hidden"
+        style={{
+          background: isDark
+            ? 'linear-gradient(135deg, #4c3fd6 0%, #7c3aed 50%, #a855f7 100%)'
+            : 'linear-gradient(135deg, #667eea 0%, #7c3aed 60%, #a855f7 100%)',
+        }}
+      >
+        <div className="relative z-10">
+          <span className="inline-block px-3 py-1 rounded-full text-[10px] tracking-wide3 uppercase mb-4"
+            style={{ background: 'rgba(255,255,255,0.2)', color: '#fff' }}>
+            ONLINE
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            {lang === 'zh' ? '资源共享，利他成就你我' : 'Shared Resources, Growth Together'}
+          </h2>
+          <p className="text-sm md:text-base text-white/80 max-w-2xl">
+            {lang === 'zh' ? '聚合 AI 创作相关的工具、素材与教程，持续更新。' : 'Curated AI creation tools, assets and tutorials, updated regularly.'}
+          </p>
+        </div>
+
+        {/* 搜索框 */}
+        <div className="relative mt-6 max-w-md">
+          <svg className="absolute left-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ opacity: 0.7 }}>
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={lang === 'zh' ? '搜索资源...' : 'Search resources...'}
+            className="w-full pl-11 pr-4 py-3 rounded-xl text-sm outline-none transition-all"
+            style={{
+              background: 'rgba(255,255,255,0.15)',
+              border: '1px solid rgba(255,255,255,0.25)',
+              color: '#fff',
+              backdropFilter: 'blur(10px)',
+            }}
+          />
+        </div>
+      </div>
+
+      {/* 分组卡片 */}
+      {resourceGroups
+        .map((group) => ({
+          ...group,
+          items: group.items.filter((item) => {
+            if (!query.trim()) return true
+            const q = query.toLowerCase()
+            return item.name.zh.toLowerCase().includes(q) || item.name.en.toLowerCase().includes(q) || group.title.zh.toLowerCase().includes(q)
+          }),
+        }))
+        .filter((group) => group.items.length > 0)
+        .map((group, idx) => (
+        <div key={group.id} className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-6 rounded-full" style={{ background: '#a855f7' }} />
+            <h3 className="text-xl md:text-2xl font-medium" style={{ color: ink }}>
+              {group.title[lang]}
+            </h3>
+          </div>
+          <p className="text-sm mb-6" style={{ color: isDark ? 'rgba(232,232,232,0.5)' : 'rgba(26,26,26,0.5)' }}>
+            {group.desc[lang]}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {group.items.map((item, i) => (
+              <a
+                key={i}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-xl p-5 transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  background: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.8)',
+                  border: '1px solid ' + (isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)'),
+                }}
               >
-                <div className="flex items-baseline gap-6">
-                  <span className="font-display italic text-muted text-lg md:text-xl w-12">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h3 className="text-base md:text-lg font-normal">{group.title[lang]}</h3>
-                    <p className="text-xs md:text-sm text-muted mt-1 hidden md:block">{group.desc[lang]}</p>
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(168,85,247,0.2), rgba(124,58,237,0.1))',
+                      color: '#a855f7',
+                    }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="M21 15l-5-5L5 21" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-sm font-medium" style={{ color: ink }}>{item.name[lang]}</h4>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+                        className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#a855f7' }}>
+                        <path d="M7 17L17 7M7 7h10v10" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-                <div className="relative w-5 h-5 flex-shrink-0 text-muted">
-                  <span
-                    className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-px bg-current transition-all duration-300 ${
-                      isOpen ? 'rotate-90 opacity-0' : ''
-                    }`}
-                  ></span>
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-px bg-current transition-all duration-300 rotate-90"></span>
-                </div>
-              </button>
-
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-line ${
-                  isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                <div className="px-6 md:px-8 pb-6 md:pb-8 border-t border-line">
-                  <p className="text-xs md:text-sm text-muted mt-4 mb-5 md:hidden">{group.desc[lang]}</p>
-                  <ul className="space-y-1">
-                    {group.items.map((item, i) => (
-                      <li key={i}>
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group flex items-center justify-between py-3 border-b border-faint hover:border-ink/30 transition-colors duration-300"
-                        >
-                          <span className="flex items-center gap-4">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="0.8" className="text-muted group-hover:text-ink transition-colors">
-                              <line x1="2" y1="7" x2="12" y2="7" className="line-draw" />
-                              <polyline points="8,3 12,7 8,11" className="line-draw" style={{ transitionDelay: '0.1s' }} />
-                            </svg>
-                            <span className="text-sm">{item.name[lang]}</span>
-                          </span>
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="0.8" className="text-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <path d="M4 12 L12 4 M6 4 L12 4 L12 10" />
-                          </svg>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
     </PageWrap>
   )
 }
-
-/* ============================================================
-   联系方式页
-   ============================================================ */
 
 function Contact() {
   const [copied, setCopied] = useState(false)
@@ -1266,7 +1297,6 @@ function Contact() {
 
   return (
     <PageWrap>
-      <PageHeader num="04" titleKey="contact.title" enKey="contact.en" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         <div className="stagger">
@@ -1302,17 +1332,36 @@ function Contact() {
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   onClick={(e) => {
-                    if (item.label === 'WeChat') {
+                    if (item.label === '微信' || item.label === '公众号') {
                       e.preventDefault()
-                      copyWechat()
+                      navigator.clipboard && navigator.clipboard.writeText(item.value)
+                      setCopied(true)
+                      setTimeout(() => setCopied(false), 2000)
                     }
                   }}
                   className="flex items-center justify-between py-5 md:py-6 hover:pl-4 transition-all duration-500 ease-line"
                 >
                   <div className="flex items-center gap-5">
-                    <span className="font-display italic text-muted text-sm w-8">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
+                    {/* 图标 */}
+                    {item.label === '邮箱' && (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-muted">
+                        <rect x="3" y="5" width="18" height="14" rx="1" />
+                        <path d="M3 7l9 6 9-6" />
+                      </svg>
+                    )}
+                    {item.label === '微信' && (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-muted">
+                        <path d="M8.5 4C4.9 4 2 6.7 2 10c0 1.9 1 3.5 2.6 4.6L4 17l2.8-1.5c.5.1 1.1.2 1.7.2M15.5 9c-3.6 0-6.5 2.4-6.5 5.4 0 3 2.9 5.4 6.5 5.4.7 0 1.4-.1 2-.3l2.5 1.3-.7-2.1c1.6-1 2.7-2.6 2.7-4.3C22 11.4 19.1 9 15.5 9z" />
+                      </svg>
+                    )}
+                    {item.label === '公众号' && (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-muted">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 20l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        <circle cx="8.5" cy="11" r="0.5" fill="currentColor" />
+                        <circle cx="12" cy="11" r="0.5" fill="currentColor" />
+                        <circle cx="15.5" cy="11" r="0.5" fill="currentColor" />
+                      </svg>
+                    )}
                     <div>
                       <p className="text-xs text-muted tracking-wide2 uppercase mb-1">{item.label}</p>
                       <p className="text-base md:text-lg">{item.value}</p>
